@@ -5,6 +5,7 @@ from rest_framework import status
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 
+#The following endpoint is used to get cars from SQLite db.
 @api_view(['GET'])
 def get_cars(request):
     cars = Car.objects.all()
