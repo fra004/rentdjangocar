@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from .views import get_my_cars
 from .views import get_cars
+from .views import get_all_cars
 from .views import save_car
 from .views import update_car
 from .views import delete_car
@@ -24,6 +25,7 @@ from .views import delete_car
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("mycars/", get_my_cars),
+    path("allcars/", get_all_cars),
     path("cars/", get_cars),
     path("save_car/", save_car),
     path("update_car/<int:id>", update_car),

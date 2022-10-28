@@ -6,6 +6,16 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view
 
 
+
+#The following endpoint is used to get cars from SQLite db.
+@api_view(['GET'])
+def get_all_cars(request):
+    cars = Car.objects.all()
+    serializer = CarSerializer(cars, many=True)
+    print(serializer.data)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
 #The following endpoint is used to get cars from SQLite db.
 @api_view(['GET'])
 def get_my_cars(request):
